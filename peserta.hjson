@@ -1,30 +1,44 @@
-[
-  {
-    nama: "MUHAMMAD RIZQIE NAUFAL MOHD NAZLI"
-    umur: 12
-  }
-  {
-    nama: "MUHAMMAD FIRAS HAZIM BIN AZHAR"
-    umur: 11
-  }
-  {
-    nama: "MUHAMMAD HADIF AKHYAR BIN MUHAMMAD AZFAR"
-    umur: 11
-  }
-  {
-    nama: "MUHAMMAD NUR AMIN BIN MOHAMMAD NORFAIZAL"
-    umur: 10
-  }
-  {
-    nama: "MUHAMMAD AISY BIN SHAMSURI"
-    umur: 9
-  }
-  {
-    nama: "UMAR FIRDAUS BIN MOHAMAD KHAIRIL"
-    umur: 9
-  }
-  {
-    nama: "DANIAL AZ ZARIF BIN AHMAD RIDUAN"
-    umur: 8
-  }
-]
+{
+  # Maklumat Kumpulan Tasmik / Daurah Quran
+  pembimbing: "USTAZ MUHAMMAD AIDIL 'ARIF BIN MOHD DARHA"
+  kumpulan: "LELAKI"
+
+  # Senarai Peserta (Disusun mengikut Umur: Muda ke Tua)
+  peserta: [
+    {
+      nama: "DANIAL AZ ZARIF BIN AHMAD RIDUAN"
+      umur: 8
+      tahap_cadangan: 1
+    }
+    {
+      nama: "MUHAMMAD AISY BIN SHAMSURI"
+      umur: 9
+      tahap_cadangan: 1
+    }
+    {
+      nama: "UMAR FIRDAUS BIN MOHAMAD KHAIRIL"
+      umur: 9
+      tahap_cadangan: 1
+    }
+    {
+      nama: "MUHAMMAD NUR AMIN BIN MOHAMMAD NORFAIZAL"
+      umur: 10
+      tahap_cadangan: 1
+    }
+    {
+      nama: "MUHAMMAD FIRAS HAZIM BIN AZHAR"
+      umur: 11
+      tahap_cadangan: 2
+    }
+    {
+      nama: "MUHAMMAD HADIF AKHYAR BIN MUHAMMAD AZFAR"
+      umur: 11
+      tahap_cadangan: 2
+    }
+    {
+      nama: "MUHAMMAD RIZQIE NAUFAL MOHD NAZLI"
+      umur: 12
+      tahap_cadangan: 2
+    }
+  ]
+}
