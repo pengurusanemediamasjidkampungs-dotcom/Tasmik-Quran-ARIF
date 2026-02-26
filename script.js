@@ -2,15 +2,13 @@
 // 1. DATA PESERTA & KONFIGURASI
 // ==========================================
 const dataPeserta = [
-    { nama: "NUR SYAURAH BINTI ESRIFADLI", umur: 13 },
-    { nama: "NUR DHIA HUSNA BINTI HAMIZAN", umur: 13 },
-    { nama: "NUR DAMIA HUMAIRA BINTI MD KHAIRUL AZHAR", umur: 12 },
-    { nama: "NUR ALYA FATINI BINTI MOHAMAD SSIBAH", umur: 11 },
-    { nama: "ZAHIYYATUL HUSNA BINTI NORIZAM", umur: 10 },
-    { nama: "NUR AESHA HUMAIRA BINTI MUHAMMAD AZFAR", umur: 9 },
-    { nama: "ADAWIYAH HUMAIRA BINTI SHAHRIN", umur: 9 },
-    { nama: "HIDAYATUL ZAHIROH BINTI NORIZAM", umur: 9 },
-    { nama: "NUR DIYANA HUWAINAA BINTI MD KHAIRUL AZHAR", umur: 8 }
+    { nama: "MUHAMMAD RIZQIE NAUFAL MOHD NAZLI", umur: 12 },
+    { nama: "MUHAMMAD FIRAS HAZIM BIN AZHAR", umur: 11 },
+    { nama: "MUHAMMAD HADIF AKHYAR BIN MUHAMMAD AZFAR", umur: 11 },
+    { nama: "MUHAMMAD NUR AMIN BIN MOHAMMAD NORFAIZAL", umur: 10 },
+    { nama: "MUHAMMAD AISY BIN SHAMSURI", umur: 9 },
+    { nama: "UMAR FIRDAUS BIN MOHAMAD KHAIRIL", umur: 9 },
+    { nama: "DANIAL AZ ZARIF BIN AHMAD RIDUAN", umur: 8 }
 ];
 
 const GAS_URL = "https://script.google.com/macros/s/AKfycbw5tyY3rrQFkGisxuE-pAc-Ii2Z4G2GYyUyvS6NeTSlrpKhlQ4aFEaWC-5ujnXCa9u1Ag/exec";
