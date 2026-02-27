@@ -70,7 +70,7 @@ const silibusData = {
 let surahTerpilih = "";
 let mediaRecorder;
 let audioChunks = [];
-let base64AudioData = null; // Memori transit audio
+let base64AudioData = null;
 
 window.onload = () => {
     populatePeserta();
@@ -81,6 +81,7 @@ window.onload = () => {
 function populatePeserta() {
     const select = document.getElementById('nama-select');
     if(!select) return;
+    // Disusun mengikut Umur: Muda ke Tua
     const sorted = [...dataPeserta].sort((a, b) => a.umur - b.umur); 
     select.innerHTML = sorted.map(p => 
         `<option value="${p.nama}">${p.nama} (${p.umur} Thn)</option>`
@@ -139,7 +140,6 @@ function pilihSurah(surahObj, elemen) {
 // 2. LOGIK FLOATING BUTTONS & AUDIO
 // ==========================================
 function initFloatingButtons() {
-    // HTML sudah ada dalam index.html, kita hanya sambungkan event listener
     const recBtn = document.getElementById('record-floating-btn');
     const micIcon = document.getElementById('mic-icon');
     const submitBtn = document.getElementById('submit-floating-btn');
@@ -181,7 +181,7 @@ function initFloatingButtons() {
 }
 
 // ==========================================
-// 3. PENGHANTARAN DATA (SHEETS & TELEGRAM)
+// 3. PENGHANTARAN DATA (SHEETS & QUEUE)
 // ==========================================
 async function hantarRekod() {
     const namaPeserta = document.getElementById('nama-select').value;
@@ -208,7 +208,7 @@ async function hantarRekod() {
         tajwid: tajwidVal,
         fasohah: fasohahVal,
         ulasan: "Rekod Tasmik Smart 2050",
-        audioData: base64AudioData // Suntik audio ke sini
+        audioData: base64AudioData 
     };
 
     let queue = JSON.parse(localStorage.getItem('tasmik_queue')) || [];
@@ -216,8 +216,6 @@ async function hantarRekod() {
     localStorage.setItem('tasmik_queue', JSON.stringify(queue));
 
     alert(`Rekod ${surahTerpilih} disimpan!`);
-    
-    // Reset audio memori selepas simpan
     base64AudioData = null; 
     
     if (navigator.onLine) await syncNow();
@@ -226,17 +224,19 @@ async function hantarRekod() {
 async function syncNow() {
     let queue = JSON.parse(localStorage.getItem('tasmik_queue')) || [];
     if (queue.length === 0) return;
+    
     const statusText = document.getElementById('sync-status');
-    if(statusText) statusText.innerText = "⏳ Menghantar data...";
+    if(statusText) statusText.innerText = `⏳ Menghantar ${queue.length} rekod...`;
 
-    for (let i = 0; i < queue.length; i++) {
+    for (const item of queue) {
         try {
             await fetch(GAS_URL, {
                 method: 'POST',
-                body: JSON.stringify(queue[i])
+                mode: 'no-cors',
+                body: JSON.stringify(item)
             });
         } catch (e) { 
-            if(statusText) statusText.innerText = "❌ Gagal hantar.";
+            if(statusText) statusText.innerText = "❌ Gagal hantar. Simpan dalam cache.";
             return;
         }
     }
