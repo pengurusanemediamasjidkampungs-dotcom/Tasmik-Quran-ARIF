@@ -3,11 +3,31 @@
   pembimbing: "USTAZ MUHAMMAD AIDIL 'ARIF BIN MOHD DARHA"
   kumpulan: "LELAKI"
 
-  # Senarai Peserta (Disusun mengikut Umur: Muda ke Tua)
+  # Senarai Peserta (Disusun mengikut Umur: Tua ke Muda)
   peserta: [
     {
-      nama: "DANIAL AZ ZARIF BIN AHMAD RIDUAN"
-      umur: 8
+      nama: "MUHAMMAD NUR IMAN BIN MOHAMMAD NORFAIZAL"
+      umur: 12
+      tahap_cadangan: 2
+    }
+    {
+      nama: "MUHAMMAD RIZQIE NAUFAL MOHD NAZLI"
+      umur: 12
+      tahap_cadangan: 2
+    }
+    {
+      nama: "MUHAMMAD FIRAS HAZIM BIN AZHAR"
+      umur: 11
+      tahap_cadangan: 2
+    }
+    {
+      nama: "MUHAMMAD HADIF AKHYAR BIN MUHAMMAD AZFAR"
+      umur: 11
+      tahap_cadangan: 2
+    }
+    {
+      nama: "MUHAMMAD NUR AMIN BIN MOHAMMAD NORFAIZAL"
+      umur: 10
       tahap_cadangan: 1
     }
     {
@@ -21,29 +41,9 @@
       tahap_cadangan: 1
     }
     {
-      nama: "MUHAMMAD NUR AMIN BIN MOHAMMAD NORFAIZAL"
-      umur: 10
+      nama: "DANIAL AZ ZARIF BIN AHMAD RIDUAN"
+      umur: 8
       tahap_cadangan: 1
-    }
-    {
-      nama: "MUHAMMAD FIRAS HAZIM BIN AZHAR"
-      umur: 11
-      tahap_cadangan: 2
-    }
-    {
-      nama: "MUHAMMAD HADIF AKHYAR BIN MUHAMMAD AZFAR"
-      umur: 11
-      tahap_cadangan: 2
-    }
-    {
-      nama: "MUHAMMAD RIZQIE NAUFAL MOHD NAZLI"
-      umur: 12
-      tahap_cadangan: 2
-    }
-    {
-      nama: "MUHAMMAD NUR IMAN BIN MOHAMMAD NORFAIZAL"
-      umur: 12
-      tahap_cadangan: 2
     }
   ]
 }
