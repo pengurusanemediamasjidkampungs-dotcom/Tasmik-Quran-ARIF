@@ -2,6 +2,7 @@
 // 1. DATA PESERTA & KONFIGURASI
 // ==========================================
 const dataPeserta = [
+    { nama: "MUHAMMAD NUR IMAN BIN MOHAMMAD NORFAIZAL", umur: 12 },
     { nama: "MUHAMMAD RIZQIE NAUFAL MOHD NAZLI", umur: 12 },
     { nama: "MUHAMMAD FIRAS HAZIM BIN AZHAR", umur: 11 },
     { nama: "MUHAMMAD HADIF AKHYAR BIN MUHAMMAD AZFAR", umur: 11 },
