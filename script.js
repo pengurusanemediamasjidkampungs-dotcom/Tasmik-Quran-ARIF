@@ -5,12 +5,13 @@ const dataPeserta = [
     { nama: "MUHAMMAD FAIZ HARRAZ BIN AZHAR", umur: 14 },
     { nama: "MUHAMMAD NUR IMAN BIN MOHAMMAD NORFAIZAL", umur: 12 },
     { nama: "MUHAMMAD RIZQIE NAUFAL MOHD NAZLI", umur: 12 },
-    { nama: "MUHAMMAD AIDAN HARITH BIN ABDUL HAQQ", umur: 12 }
+    { nama: "MUHAMMAD AIDAN HARITH BIN ABDUL HAQQ", umur: 12 }, // Tambah koma di sini
+    { nama: "MUHAMMAD ZAHIN BIN MOHD IRWAN", umur: 11 },        // Nama ini tertinggal tadi
     { nama: "MUHAMMAD FIRAS HAZIM BIN AZHAR", umur: 11 },
     { nama: "MUHAMMAD HADIF AKHYAR BIN MUHAMMAD AZFAR", umur: 11 },
     { nama: "MUHAMMAD NUR AMIN BIN MOHAMMAD NORFAIZAL", umur: 10 },
     { nama: "MUHAMMAD AISY BIN SHAMSURI", umur: 9 },
-    { nama: "UMAR FIRDAUS BIN MOHAMAD KHAIRIL", umur: 9 },
+    { nama: "UMAR FIRDAUS BIN MOHAMAD KHAIRIL", umur: 9 }
 ];
 
 const GAS_URL = "https://script.google.com/macros/s/AKfycbw5tyY3rrQFkGisxuE-pAc-Ii2Z4G2GYyUyvS6NeTSlrpKhlQ4aFEaWC-5ujnXCa9u1Ag/exec";
