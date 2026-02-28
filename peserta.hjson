@@ -3,11 +3,36 @@
   pembimbing: "USTAZ MUHAMMAD AIDIL 'ARIF BIN MOHD DARHA"
   kumpulan: "LELAKI"
 
-  # Senarai Peserta (Disusun mengikut Umur: Tua ke Muda)
+  # Senarai Peserta (Disusun mengikut Umur: Muda ke Tua)
   peserta: [
     {
-      nama: "MUHAMMAD FAIZ HARRAZ BIN AZHAR"
-      umur: 14
+      nama: "MUHAMMAD AISY BIN SHAMSURI"
+      umur: 9
+      tahap_cadangan: 1
+    }
+    {
+      nama: "UMAR FIRDAUS BIN MOHAMAD KHAIRIL"
+      umur: 9
+      tahap_cadangan: 1
+    }
+    {
+      nama: "MUHAMMAD NUR AMIN BIN MOHAMMAD NORFAIZAL"
+      umur: 10
+      tahap_cadangan: 1
+    }
+    {
+      nama: "MUHAMMAD ZAHIN BIN MOHD IRWAN"
+      umur: 11
+      tahap_cadangan: 2
+    }
+    {
+      nama: "MUHAMMAD FIRAS HAZIM BIN AZHAR"
+      umur: 11
+      tahap_cadangan: 2
+    }
+    {
+      nama: "MUHAMMAD HADIF AKHYAR BIN MUHAMMAD AZFAR"
+      umur: 11
       tahap_cadangan: 2
     }
     {
@@ -26,34 +51,9 @@
       tahap_cadangan: 2
     }
     {
-      nama: "MUHAMMAD ZAHIN BIN MOHD IRWAN"
-      umur: 11
+      nama: "MUHAMMAD FAIZ HARRAZ BIN AZHAR"
+      umur: 14
       tahap_cadangan: 2
-    }
-    {
-      nama: "MUHAMMAD FIRAS HAZIM BIN AZHAR"
-      umur: 11
-      tahap_cadangan: 2
-    }
-    {
-      nama: "MUHAMMAD HADIF AKHYAR BIN MUHAMMAD AZFAR"
-      umur: 11
-      tahap_cadangan: 2
-    }
-    {
-      nama: "MUHAMMAD NUR AMIN BIN MOHAMMAD NORFAIZAL"
-      umur: 10
-      tahap_cadangan: 1
-    }
-    {
-      nama: "MUHAMMAD AISY BIN SHAMSURI"
-      umur: 9
-      tahap_cadangan: 1
-    }
-    {
-      nama: "UMAR FIRDAUS BIN MOHAMAD KHAIRIL"
-      umur: 9
-      tahap_cadangan: 1
     }
   ]
 }
