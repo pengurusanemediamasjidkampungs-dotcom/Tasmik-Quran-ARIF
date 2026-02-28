@@ -2,22 +2,24 @@
 // 1. DATA PESERTA & KONFIGURASI
 // ==========================================
 const dataPeserta = [
-    { nama: "MUHAMMAD FAIZ HARRAZ BIN AZHAR", umur: 14 },
-    { nama: "MUHAMMAD NUR IMAN BIN MOHAMMAD NORFAIZAL", umur: 12 },
-    { nama: "MUHAMMAD RIZQIE NAUFAL MOHD NAZLI", umur: 12 },
-    { nama: "MUHAMMAD AIDAN HARITH BIN ABDUL HAQQ", umur: 12 }, // Tambah koma di sini
-    { nama: "MUHAMMAD ZAHIN BIN MOHD IRWAN", umur: 11 },        // Nama ini tertinggal tadi
-    { nama: "MUHAMMAD FIRAS HAZIM BIN AZHAR", umur: 11 },
-    { nama: "MUHAMMAD HADIF AKHYAR BIN MUHAMMAD AZFAR", umur: 11 },
-    { nama: "MUHAMMAD NUR AMIN BIN MOHAMMAD NORFAIZAL", umur: 10 },
-    { nama: "MUHAMMAD AISY BIN SHAMSURI", umur: 9 },
-    { nama: "UMAR FIRDAUS BIN MOHAMAD KHAIRIL", umur: 9 }
+    { nama: "UMAIR BIN MOHAMMAD NUAIM", umur: 7 },
+    { nama: "AHMAD AMSYAR BIN AHMAD AHNAF", umur: 9 },
+    { nama: "DANIEL IZZ ZAYAN BIN ZARUL FITRY", umur: 9 },
+    { nama: "DANIAL AR RAYYAN BIN AHMAD RIDUAN", umur: 11 },
+    { nama: "AEL AMEEN BIN SHAHRIN", umur: 12 },
+    { nama: "DANIEL FIKRY ARYAN BIN ZARUL FITRY", umur: 12 },
+    { nama: "MUHAMMAD ZAKWAN BIN MUHAMMAD FADHIL", umur: 13 },
+    { nama: "MUHAMMAD ADAM SHAH BIN SYEDPUDIN", umur: 14 },
+    { nama: "MUHAMMAD AZAM SHAH BIN ABDULLAH", umur: 16 },
+    { nama: "DANISH ANIQ BIN MD KHAIRUL AZHAR", umur: 16 },
+    { nama: "MUHAMMAD HADIF FITRI BIN NORIZAM", umur: 16 },
+    { nama: "DANIAL AZ ZARIF BIN AHMAD RIDUAN", umur: 18 }
 ];
 
 const GAS_URL = "https://script.google.com/macros/s/AKfycbw5tyY3rrQFkGisxuE-pAc-Ii2Z4G2GYyUyvS6NeTSlrpKhlQ4aFEaWC-5ujnXCa9u1Ag/exec";
 
 const pembimbingInfo = {
-    nama: "MUHAMMAD AIDIL 'ARIF BIN MOHD DARHA",
+    nama: "MUHAMMAD NUAIM BIN MOHD DARHA",
     jantina: "LELAKI"
 };
 
@@ -72,7 +74,7 @@ const silibusData = {
 let surahTerpilih = "";
 let mediaRecorder;
 let audioChunks = [];
-let base64AudioData = null;
+let base64AudioData = null; // Memori transit audio
 
 window.onload = () => {
     populatePeserta();
@@ -83,7 +85,6 @@ window.onload = () => {
 function populatePeserta() {
     const select = document.getElementById('nama-select');
     if(!select) return;
-    // Disusun mengikut Umur: Muda ke Tua
     const sorted = [...dataPeserta].sort((a, b) => a.umur - b.umur); 
     select.innerHTML = sorted.map(p => 
         `<option value="${p.nama}">${p.nama} (${p.umur} Thn)</option>`
@@ -142,6 +143,7 @@ function pilihSurah(surahObj, elemen) {
 // 2. LOGIK FLOATING BUTTONS & AUDIO
 // ==========================================
 function initFloatingButtons() {
+    // HTML sudah ada dalam index.html, kita hanya sambungkan event listener
     const recBtn = document.getElementById('record-floating-btn');
     const micIcon = document.getElementById('mic-icon');
     const submitBtn = document.getElementById('submit-floating-btn');
@@ -183,7 +185,7 @@ function initFloatingButtons() {
 }
 
 // ==========================================
-// 3. PENGHANTARAN DATA (SHEETS & QUEUE)
+// 3. PENGHANTARAN DATA (SHEETS & TELEGRAM)
 // ==========================================
 async function hantarRekod() {
     const namaPeserta = document.getElementById('nama-select').value;
@@ -210,7 +212,7 @@ async function hantarRekod() {
         tajwid: tajwidVal,
         fasohah: fasohahVal,
         ulasan: "Rekod Tasmik Smart 2050",
-        audioData: base64AudioData 
+        audioData: base64AudioData // Suntik audio ke sini
     };
 
     let queue = JSON.parse(localStorage.getItem('tasmik_queue')) || [];
@@ -218,6 +220,8 @@ async function hantarRekod() {
     localStorage.setItem('tasmik_queue', JSON.stringify(queue));
 
     alert(`Rekod ${surahTerpilih} disimpan!`);
+    
+    // Reset audio memori selepas simpan
     base64AudioData = null; 
     
     if (navigator.onLine) await syncNow();
@@ -226,19 +230,17 @@ async function hantarRekod() {
 async function syncNow() {
     let queue = JSON.parse(localStorage.getItem('tasmik_queue')) || [];
     if (queue.length === 0) return;
-    
     const statusText = document.getElementById('sync-status');
-    if(statusText) statusText.innerText = `⏳ Menghantar ${queue.length} rekod...`;
+    if(statusText) statusText.innerText = "⏳ Menghantar data...";
 
-    for (const item of queue) {
+    for (let i = 0; i < queue.length; i++) {
         try {
             await fetch(GAS_URL, {
                 method: 'POST',
-                mode: 'no-cors',
-                body: JSON.stringify(item)
+                body: JSON.stringify(queue[i])
             });
         } catch (e) { 
-            if(statusText) statusText.innerText = "❌ Gagal hantar. Simpan dalam cache.";
+            if(statusText) statusText.innerText = "❌ Gagal hantar.";
             return;
         }
     }
