@@ -17,7 +17,7 @@ const dataPeserta = [
 const GAS_URL = "https://script.google.com/macros/s/AKfycbw5tyY3rrQFkGisxuE-pAc-Ii2Z4G2GYyUyvS6NeTSlrpKhlQ4aFEaWC-5ujnXCa9u1Ag/exec";
 
 const pembimbingInfo = {
-    nama: "MUHAMMAD NUAIM BIN MOHD DARHA",
+    nama: "MUHAMMAD AIDIL 'ARIF BIN MOHD DARHA",
     jantina: "LELAKI"
 };
 
